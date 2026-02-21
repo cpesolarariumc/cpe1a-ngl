@@ -10,7 +10,7 @@ const _0x1a2b = [
     '176091428343',                            
     '1:176091428343:web:935f98400d1f2b57c46af2', 
     'G-1SYQSDJ74S',                            
-    'BSCPE-A1-2ndSem-Admin'                    
+    'BSCPE-A1-2ndSem'  /*Semester*/                  
 ];
 
 export const firebaseConfig = {
@@ -24,4 +24,5 @@ export const firebaseConfig = {
 };
 
 export const adminPassword = _0x1a2b[7];
+
 
