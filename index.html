@@ -9,9 +9,11 @@
 <body>
     <div class="container">
         <div class="profile-section">
-            <div class="avatar-container">
-                <img src="1A.jpg" alt="CPE 1-A Profile">
-            </div>
+            <a href="https://www.facebook.com/profile.php?id=61580406668824" target="_blank" class="avatar-link">
+                <div class="avatar-container">
+                    <img src="1A.jpg" alt="CPE 1-A Profile">
+                </div>
+            </a>
             <div class="username">CPE 1-A</div>
         </div>
 
@@ -51,8 +53,6 @@
 
         sendForm.onsubmit = async (e) => {
             e.preventDefault();
-            
-            // Lock interaction
             submitBtn.innerText = "Sending...";
             submitBtn.disabled = true;
             
@@ -63,11 +63,8 @@
                     content: text, 
                     timestamp: serverTimestamp() 
                 });
-                
-                // Final State Transition
                 inputContainer.style.display = 'none';
                 successContainer.style.display = 'block';
-
             } catch (error) {
                 console.error("Error:", error);
                 alert("Failed to send. Please check your internet.");
