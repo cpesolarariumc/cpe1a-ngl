@@ -15,7 +15,7 @@
             <div class="username">CPE 1-A</div>
         </div>
 
-        <div class="glass-card">
+        <div id="input-container" class="glass-card">
             <p style="opacity: 0.8; font-size: 1rem; margin-bottom: 20px; font-weight: 600;">
                 send an anonymous message to us!
             </p>
@@ -24,9 +24,14 @@
                 <textarea id="msg" placeholder="type your secret..." required maxlength="300"></textarea>
                 <button type="submit" id="submit-btn" class="send-btn">Send Anonymous</button>
             </form>
-            
-            <p id="success" style="display:none; margin-top: 15px; color: var(--accent); font-weight: bold;">
-                ✨ Sent into the void!
+        </div>
+
+        <div id="success-container" class="glass-card" style="display: none; animation: popUp 0.4s ease;">
+            <div style="font-size: 3.5rem; margin-bottom: 15px;">✨</div>
+            <h2 style="margin-bottom: 10px; color: var(--accent);">Message Sent!</h2>
+            <p style="opacity: 0.8; font-size: 1rem; line-height: 1.5;">
+                Your message has been delivered to the CPE 1-A realm. <br>
+                Thank you for sharing.
             </p>
         </div>
     </div>
@@ -36,38 +41,36 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-        // Initialize Firebase using your config.js
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
         const sendForm = document.getElementById('send-form');
         const submitBtn = document.getElementById('submit-btn');
-        const successMsg = document.getElementById('success');
+        const inputContainer = document.getElementById('input-container');
+        const successContainer = document.getElementById('success-container');
 
         sendForm.onsubmit = async (e) => {
             e.preventDefault();
             
-            // Visual feedback
+            // Lock interaction
             submitBtn.innerText = "Sending...";
             submitBtn.disabled = true;
             
             const text = document.getElementById('msg').value;
             
             try {
-                // Send to Firestore
                 await addDoc(collection(db, "messages"), { 
                     content: text, 
                     timestamp: serverTimestamp() 
                 });
                 
-                // Reset form and show success
-                sendForm.reset();
-                successMsg.style.display = 'block';
-                setTimeout(() => { successMsg.style.display = 'none'; }, 3000);
+                // Final State Transition
+                inputContainer.style.display = 'none';
+                successContainer.style.display = 'block';
+
             } catch (error) {
                 console.error("Error:", error);
-                alert("Message failed to send. Check your connection.");
-            } finally {
+                alert("Failed to send. Please check your internet.");
                 submitBtn.innerText = "Send Anonymous";
                 submitBtn.disabled = false;
             }
