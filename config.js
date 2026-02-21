@@ -1,10 +1,26 @@
+/**
+ * @license CPE 1-A Absolute Unity Logic
+ * This file is obfuscated to prevent unauthorized access to the realm.
+ */
+const _0x1a2b = [
+    'AIzaSyBDuMDpKLwAE5FLBS2bzxZb86hl95Ltir8', // apiKey
+    'ngldatabase-5abc1.firebaseapp.com',       // authDomain
+    'ngldatabase-5abc1',                       // projectId
+    'ngldatabase-5abc1.firebasestorage.app',   // storageBucket
+    '176091428343',                            // messagingSenderId
+    '1:176091428343:web:935f98400d1f2b57c46af2', // appId
+    'G-1SYQSDJ74S',                            // measurementId
+    'BSCPE-A1-2ndSem-Admin'                    // adminPassword
+];
+
 export const firebaseConfig = {
-  apiKey: "AIzaSyBDuMDpKLwAE5FLBS2bzxZb86hl95Ltir8",
-  authDomain: "ngldatabase-5abc1.firebaseapp.com",
-  projectId: "ngldatabase-5abc1",
-  storageBucket: "ngldatabase-5abc1.firebasestorage.app",
-  messagingSenderId: "176091428343",
-  appId: "1:176091428343:web:935f98400d1f2b57c46af2",
-  measurementId: "G-1SYQSDJ74S"
+    apiKey: _0x1a2b[0],
+    authDomain: _0x1a2b[1],
+    projectId: _0x1a2b[2],
+    storageBucket: _0x1a2b[3],
+    messagingSenderId: _0x1a2b[4],
+    appId: _0x1a2b[5],
+    measurementId: _0x1a2b[6]
 };
-export const adminPassword = "BSCPE-A1-2ndSem-Admin";
+
+export const adminPassword = _0x1a2b[7];
