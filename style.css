@@ -190,4 +190,34 @@ input {
     justify-content: center;
     overflow: hidden; /* This keeps the 1A.jpg image circular */
     box-shadow: 0 10px 20px rgba(0, 210, 255, 0.4);
+
+}
+
+/* Avatar Link Reset */
+.avatar-link {
+    text-decoration: none;
+    display: inline-block;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Hover/Active States for Avatar */
+.avatar-container {
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.avatar-container:hover {
+    transform: scale(1.1); /* "Pop" effect */
+    box-shadow: 0 0 25px var(--accent);
+}
+
+.avatar-container:active {
+    transform: scale(0.95); /* "Click" effect */
+}
+
+/* Ensure images inside avatars fill correctly */
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
