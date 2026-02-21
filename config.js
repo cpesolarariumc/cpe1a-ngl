@@ -3,14 +3,14 @@
  * This file is obfuscated to prevent unauthorized access to the realm.
  */
 const _0x1a2b = [
-    'AIzaSyBDuMDpKLwAE5FLBS2bzxZb86hl95Ltir8', // apiKey
-    'ngldatabase-5abc1.firebaseapp.com',       // authDomain
-    'ngldatabase-5abc1',                       // projectId
-    'ngldatabase-5abc1.firebasestorage.app',   // storageBucket
-    '176091428343',                            // messagingSenderId
-    '1:176091428343:web:935f98400d1f2b57c46af2', // appId
-    'G-1SYQSDJ74S',                            // measurementId
-    'BSCPE-A1-2ndSem-Admin'                    // adminPassword
+    'AIzaSyBDuMDpKLwAE5FLBS2bzxZb86hl95Ltir8', 
+    'ngldatabase-5abc1.firebaseapp.com',       
+    'ngldatabase-5abc1',                       
+    'ngldatabase-5abc1.firebasestorage.app',   
+    '176091428343',                            
+    '1:176091428343:web:935f98400d1f2b57c46af2', 
+    'G-1SYQSDJ74S',                            
+    'BSCPE-A1-2ndSem-Admin'                    
 ];
 
 export const firebaseConfig = {
@@ -24,3 +24,4 @@ export const firebaseConfig = {
 };
 
 export const adminPassword = _0x1a2b[7];
+
